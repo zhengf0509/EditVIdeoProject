@@ -14,6 +14,10 @@
 		6AEDFF3329223F4C00C9ED5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF3229223F4C00C9ED5E /* Assets.xcassets */; };
 		6AEDFF3629223F4C00C9ED5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF3429223F4C00C9ED5E /* LaunchScreen.storyboard */; };
 		6AEDFF3929223F4C00C9ED5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDFF3829223F4C00C9ED5E /* main.m */; };
+		6AEDFF452922459300C9ED5E /* test1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF422922459300C9ED5E /* test1.mp4 */; };
+		6AEDFF462922459300C9ED5E /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF432922459300C9ED5E /* test2.mp4 */; };
+		6AEDFF472922459300C9ED5E /* test3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF442922459300C9ED5E /* test3.mp4 */; };
+		6AEDFF49292247DC00C9ED5E /* slowdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		6AEDFF3529223F4C00C9ED5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AEDFF3729223F4C00C9ED5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AEDFF3829223F4C00C9ED5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6AEDFF422922459300C9ED5E /* test1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.mp4; sourceTree = "<group>"; };
+		6AEDFF432922459300C9ED5E /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
+		6AEDFF442922459300C9ED5E /* test3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test3.mp4; sourceTree = "<group>"; };
+		6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slowdown.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 		6AEDFF2529223F4B00C9ED5E /* EditVIdeoProject */ = {
 			isa = PBXGroup;
 			children = (
+				6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */,
+				6AEDFF422922459300C9ED5E /* test1.mp4 */,
+				6AEDFF432922459300C9ED5E /* test2.mp4 */,
+				6AEDFF442922459300C9ED5E /* test3.mp4 */,
 				6AEDFF2629223F4B00C9ED5E /* AppDelegate.h */,
 				6AEDFF2729223F4B00C9ED5E /* AppDelegate.m */,
 				6AEDFF2929223F4B00C9ED5E /* SceneDelegate.h */,
@@ -134,8 +146,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AEDFF3629223F4C00C9ED5E /* LaunchScreen.storyboard in Resources */,
+				6AEDFF452922459300C9ED5E /* test1.mp4 in Resources */,
+				6AEDFF49292247DC00C9ED5E /* slowdown.mp3 in Resources */,
 				6AEDFF3329223F4C00C9ED5E /* Assets.xcassets in Resources */,
 				6AEDFF3129223F4B00C9ED5E /* Main.storyboard in Resources */,
+				6AEDFF462922459300C9ED5E /* test2.mp4 in Resources */,
+				6AEDFF472922459300C9ED5E /* test3.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

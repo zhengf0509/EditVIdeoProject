@@ -10,6 +10,7 @@
 #import <AVKit/AVPlayerViewController.h>
 #import "ZFSpliceViewController.h"
 #import "ZFGaussBlurViewController.h"
+#import "ZFTransitionViewController.h"
 
 @interface ViewController ()
 
@@ -111,6 +112,13 @@
     [gaussBlurBtn addTarget:self action:@selector(onGaussBlurBtnPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:gaussBlurBtn];
     
+    UIButton *transitionBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 128, 48)];
+    transitionBtn.backgroundColor = [UIColor colorWithRed:0.3 green:0.4 blue:1 alpha:1.0];
+    transitionBtn.layer.cornerRadius = 8.0;
+    [transitionBtn setTitle:@"转场效果" forState:UIControlStateNormal];
+    [transitionBtn addTarget:self action:@selector(onTransitionBtnPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:transitionBtn];
+    
 //    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
 //    AVMutableVideoComposition *videocomposition = [AVMutableVideoComposition videoCompositionWithAsset:composition applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
 //        // 获取源ciimage
@@ -146,6 +154,11 @@
 - (void)onGaussBlurBtnPressed {
     ZFGaussBlurViewController *gaussBlurViewController = [[ZFGaussBlurViewController alloc] init];
     [self presentViewController:gaussBlurViewController animated:YES completion:nil];
+}
+
+- (void)onTransitionBtnPressed {
+    ZFTransitionViewController *transitionViewController = [[ZFTransitionViewController alloc] init];
+    [self presentViewController:transitionViewController animated:YES completion:nil];
 }
 
 #pragma mark - 创建自定义合成器

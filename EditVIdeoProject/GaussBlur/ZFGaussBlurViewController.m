@@ -107,7 +107,7 @@
         // 添加滤镜
         [filter setValue:source forKey:kCIInputImageKey];
         Float64 seconds = CMTimeGetSeconds(request.compositionTime);
-        
+        NSLog(@"render time: %lf", seconds);
         CIImage *output = [filter.outputImage imageByCroppingToRect:request.sourceImage.extent];
         [filter setValue:@(15) forKey:kCIInputRadiusKey];
         

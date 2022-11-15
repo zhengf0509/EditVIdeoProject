@@ -18,6 +18,10 @@
 		6AEDFF462922459300C9ED5E /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF432922459300C9ED5E /* test2.mp4 */; };
 		6AEDFF472922459300C9ED5E /* test3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF442922459300C9ED5E /* test3.mp4 */; };
 		6AEDFF49292247DC00C9ED5E /* slowdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */; };
+		6AEDFF4D2922B10000C9ED5E /* ZFSpliceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDFF4C2922B10000C9ED5E /* ZFSpliceViewController.m */; };
+		6AEDFF51292366B500C9ED5E /* ZFGaussBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDFF50292366B500C9ED5E /* ZFGaussBlurViewController.m */; };
+		6AEDFF55292367F300C9ED5E /* ZFLoadAssetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDFF54292367F300C9ED5E /* ZFLoadAssetUtils.m */; };
+		6AEDFF5829237A5300C9ED5E /* ZFPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDFF5729237A5300C9ED5E /* ZFPathManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,14 @@
 		6AEDFF432922459300C9ED5E /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 		6AEDFF442922459300C9ED5E /* test3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test3.mp4; sourceTree = "<group>"; };
 		6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slowdown.mp3; sourceTree = "<group>"; };
+		6AEDFF4B2922B10000C9ED5E /* ZFSpliceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFSpliceViewController.h; sourceTree = "<group>"; };
+		6AEDFF4C2922B10000C9ED5E /* ZFSpliceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFSpliceViewController.m; sourceTree = "<group>"; };
+		6AEDFF4F292366B500C9ED5E /* ZFGaussBlurViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFGaussBlurViewController.h; sourceTree = "<group>"; };
+		6AEDFF50292366B500C9ED5E /* ZFGaussBlurViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFGaussBlurViewController.m; sourceTree = "<group>"; };
+		6AEDFF53292367F300C9ED5E /* ZFLoadAssetUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFLoadAssetUtils.h; sourceTree = "<group>"; };
+		6AEDFF54292367F300C9ED5E /* ZFLoadAssetUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFLoadAssetUtils.m; sourceTree = "<group>"; };
+		6AEDFF5629237A5300C9ED5E /* ZFPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFPathManager.h; sourceTree = "<group>"; };
+		6AEDFF5729237A5300C9ED5E /* ZFPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFPathManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,9 @@
 		6AEDFF2529223F4B00C9ED5E /* EditVIdeoProject */ = {
 			isa = PBXGroup;
 			children = (
+				6AEDFF522923674E00C9ED5E /* utils */,
+				6AEDFF4E2923667300C9ED5E /* ZFGaussBlur */,
+				6AEDFF4A2922B08900C9ED5E /* ZFSplice */,
 				6AEDFF48292247DC00C9ED5E /* slowdown.mp3 */,
 				6AEDFF422922459300C9ED5E /* test1.mp4 */,
 				6AEDFF432922459300C9ED5E /* test2.mp4 */,
@@ -86,6 +101,35 @@
 				6AEDFF3829223F4C00C9ED5E /* main.m */,
 			);
 			path = EditVIdeoProject;
+			sourceTree = "<group>";
+		};
+		6AEDFF4A2922B08900C9ED5E /* ZFSplice */ = {
+			isa = PBXGroup;
+			children = (
+				6AEDFF4B2922B10000C9ED5E /* ZFSpliceViewController.h */,
+				6AEDFF4C2922B10000C9ED5E /* ZFSpliceViewController.m */,
+			);
+			path = ZFSplice;
+			sourceTree = "<group>";
+		};
+		6AEDFF4E2923667300C9ED5E /* ZFGaussBlur */ = {
+			isa = PBXGroup;
+			children = (
+				6AEDFF4F292366B500C9ED5E /* ZFGaussBlurViewController.h */,
+				6AEDFF50292366B500C9ED5E /* ZFGaussBlurViewController.m */,
+			);
+			path = ZFGaussBlur;
+			sourceTree = "<group>";
+		};
+		6AEDFF522923674E00C9ED5E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6AEDFF53292367F300C9ED5E /* ZFLoadAssetUtils.h */,
+				6AEDFF54292367F300C9ED5E /* ZFLoadAssetUtils.m */,
+				6AEDFF5629237A5300C9ED5E /* ZFPathManager.h */,
+				6AEDFF5729237A5300C9ED5E /* ZFPathManager.m */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = ZF;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					6AEDFF2229223F4B00C9ED5E = {
@@ -164,8 +209,12 @@
 			files = (
 				6AEDFF2E29223F4B00C9ED5E /* ViewController.m in Sources */,
 				6AEDFF2829223F4B00C9ED5E /* AppDelegate.m in Sources */,
+				6AEDFF5829237A5300C9ED5E /* ZFPathManager.m in Sources */,
+				6AEDFF55292367F300C9ED5E /* ZFLoadAssetUtils.m in Sources */,
+				6AEDFF4D2922B10000C9ED5E /* ZFSpliceViewController.m in Sources */,
 				6AEDFF3929223F4C00C9ED5E /* main.m in Sources */,
 				6AEDFF2B29223F4B00C9ED5E /* SceneDelegate.m in Sources */,
+				6AEDFF51292366B500C9ED5E /* ZFGaussBlurViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

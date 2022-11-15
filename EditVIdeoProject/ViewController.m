@@ -9,6 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVPlayerViewController.h>
 #import "ZFSpliceViewController.h"
+#import "ZFGaussBlurViewController.h"
 
 @interface ViewController ()
 
@@ -103,6 +104,13 @@
     [normalSpliceBtn addTarget:self action:@selector(onNormalSpliceBtnPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:normalSpliceBtn];
     
+    UIButton *gaussBlurBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 250, 128, 48)];
+    gaussBlurBtn.backgroundColor = [UIColor colorWithRed:0.3 green:0.4 blue:1 alpha:1.0];
+    gaussBlurBtn.layer.cornerRadius = 8.0;
+    [gaussBlurBtn setTitle:@"高斯模糊" forState:UIControlStateNormal];
+    [gaussBlurBtn addTarget:self action:@selector(onGaussBlurBtnPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:gaussBlurBtn];
+    
 //    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
 //    AVMutableVideoComposition *videocomposition = [AVMutableVideoComposition videoCompositionWithAsset:composition applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
 //        // 获取源ciimage
@@ -128,9 +136,16 @@
 //    self.playerViewController = playerViewController;
 }
 
+#pragma mark - action
+
 - (void)onNormalSpliceBtnPressed {
     ZFSpliceViewController *spliceViewController = [[ZFSpliceViewController alloc] init];
     [self presentViewController:spliceViewController animated:YES completion:nil];
+}
+
+- (void)onGaussBlurBtnPressed {
+    ZFGaussBlurViewController *gaussBlurViewController = [[ZFGaussBlurViewController alloc] init];
+    [self presentViewController:gaussBlurViewController animated:YES completion:nil];
 }
 
 #pragma mark - 创建自定义合成器

@@ -1,24 +1,27 @@
 //
-//  ZFSpliceViewController.m
+//  ZFGaussBlurViewController.m
 //  EditVIdeoProject
 //
 //  Created by 郑峰 on 2022/11/15.
 //
 
-#import "ZFSpliceViewController.h"
+#import "ZFGaussBlurViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVPlayerViewController.h>
+#import "ZFPathManager.h"
 
-@interface ZFSpliceViewController ()
+@interface ZFGaussBlurViewController ()
 
 @property (nonatomic, weak) AVPlayerViewController *playerViewController;
 
 @end
 
-@implementation ZFSpliceViewController
+@implementation ZFGaussBlurViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     // 初始化asset
     NSMutableArray *assetArray = [NSMutableArray array];
     for (int i = 1; i <= 3; i++) {
@@ -86,15 +89,52 @@
     AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
     // 使用AVMutableComposition创建AVPlayerItem
     AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:composition];
+    // 创建AVMutableVideoComposition
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    
+    NSString *picPath = [[ZFPathManager cachePath] stringByAppendingPathComponent:@"pics"];
+    if (![ZFPathManager isFileExist:picPath]) {
+        [ZFPathManager createPath:picPath];
+    }
+    
+    static NSInteger currentPicIndex = 0;
+    
+   
+    
+    AVMutableVideoComposition *videocomposition = [AVMutableVideoComposition videoCompositionWithAsset:composition applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
+        // 获取源ciimage
+        CIImage *source = request.sourceImage.imageByClampingToExtent;
+        // 添加滤镜
+        [filter setValue:source forKey:kCIInputImageKey];
+        Float64 seconds = CMTimeGetSeconds(request.compositionTime);
+        
+        CIImage *output = [filter.outputImage imageByCroppingToRect:request.sourceImage.extent];
+        [filter setValue:@(15) forKey:kCIInputRadiusKey];
+        
+//        NSString *imagePath = [picPath stringByAppendingFormat:@"/%09ld__%06ld.png", currentPicIndex, (long)(CMTimeGetSeconds(request.compositionTime) * 1000)];
+//        UIImage *inputImage = [self imageFromCImage:output];
+//        NSError *error;
+//        [UIImagePNGRepresentation(inputImage) writeToFile:imagePath options:NSDataWritingAtomic error:&error];
+        
+        currentPicIndex++;
+        
+        // 提交输出
+        [request finishWithImage:output context:nil];
+//        [request finishWithImage:request.sourceImage context:nil];
+    }];
     // 8. 将音频混合参数传递给AVPlayerItem
     playerItem.audioMix = audioMix;
+    // 9. 将视频合成传递给AVPlayerItem
+    videocomposition.renderSize = CGSizeMake(720, 1280);
+    playerItem.videoComposition = videocomposition;
     playerViewController.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
+    playerViewController.videoGravity = AVLayerVideoGravityResizeAspect;
     playerViewController.view.frame = self.view.frame;
-    self.playerViewController = playerViewController;
     
     [self addChildViewController:playerViewController];
     [self.view addSubview:playerViewController.view];
     [playerViewController didMoveToParentViewController:self];
+    self.playerViewController = playerViewController;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -105,6 +145,18 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.playerViewController.player pause];
+}
+
+- (UIImage *)imageFromCImage:(CIImage *)outputImage {
+    UIImage *image = nil;
+    @autoreleasepool {
+        CIContext *context = [[CIContext alloc] initWithOptions:nil];
+        CGImageRef outputImageRef = [context createCGImage:outputImage
+                                                  fromRect:outputImage.extent];
+        image = [UIImage imageWithCGImage:outputImageRef];
+        CGImageRelease(outputImageRef);
+    }
+    return image;
 }
 
 @end

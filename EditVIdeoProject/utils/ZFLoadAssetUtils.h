@@ -1,15 +1,15 @@
 //
-//  ZFSpliceViewController.h
+//  ZFLoadAssetUtils.h
 //  EditVIdeoProject
 //
 //  Created by 郑峰 on 2022/11/15.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZFSpliceViewController : UIViewController
+@interface ZFLoadAssetUtils : NSObject
 
 @end
 

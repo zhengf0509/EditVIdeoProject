@@ -64,22 +64,22 @@
 
 - (void)onNormalSpliceBtnPressed {
     ZFSpliceViewController *spliceViewController = [[ZFSpliceViewController alloc] init];
-    [self presentViewController:spliceViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:spliceViewController animated:YES];
 }
 
 - (void)onGaussBlurBtnPressed {
     ZFGaussBlurViewController *gaussBlurViewController = [[ZFGaussBlurViewController alloc] init];
-    [self presentViewController:gaussBlurViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:gaussBlurViewController animated:YES];
 }
 
 - (void)onTransitionBtnPressed {
     ZFTransitionViewController *transitionViewController = [[ZFTransitionViewController alloc] init];
-    [self presentViewController:transitionViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:transitionViewController animated:YES];
 }
 
 - (void)onCustomizeBtnPressed {
     ZFCustomizeViewController *customizeViewController = [[ZFCustomizeViewController alloc] init];
-    [self presentViewController:customizeViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:customizeViewController animated:YES];
 }
 
 @end
